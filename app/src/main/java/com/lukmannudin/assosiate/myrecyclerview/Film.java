@@ -1,6 +1,6 @@
 package com.lukmannudin.assosiate.myrecyclerview;
 
-class President {
+class Film {
     private String name;
     private String year;
     private String photo;

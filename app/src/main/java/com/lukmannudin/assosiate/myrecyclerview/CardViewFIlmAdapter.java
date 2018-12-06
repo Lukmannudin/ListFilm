@@ -15,22 +15,22 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class CardViewPresidentAdapter extends RecyclerView.Adapter<CardViewPresidentAdapter.CardViewViewHolder> {
+public class CardViewFIlmAdapter extends RecyclerView.Adapter<CardViewFIlmAdapter.CardViewViewHolder> {
 
-    private ArrayList<President> listPresident;
+    private ArrayList<Film> listFilm;
     private Context context;
 
 
-    public CardViewPresidentAdapter(Context context){
+    public CardViewFIlmAdapter(Context context){
         this.context = context;
     }
 
-    public ArrayList<President> getListPresident(){
-        return listPresident;
+    public ArrayList<Film> getListFilm(){
+        return listFilm;
     }
 
-    public void setListPresident(ArrayList<President> listPresident){
-        this.listPresident = listPresident;
+    public void setListFilm(ArrayList<Film> listFilm){
+        this.listFilm = listFilm;
     }
 
     public class CardViewViewHolder extends RecyclerView.ViewHolder {
@@ -58,7 +58,7 @@ public class CardViewPresidentAdapter extends RecyclerView.Adapter<CardViewPresi
 
     @Override
     public void onBindViewHolder(CardViewViewHolder holder, int position) {
-        final President p = getListPresident().get(position);
+        final Film p = getListFilm().get(position);
 
         Glide.with(context)
                 .load(p.getPhoto())
@@ -70,14 +70,14 @@ public class CardViewPresidentAdapter extends RecyclerView.Adapter<CardViewPresi
         holder.btnFavorite.setOnClickListener(new CustomOnItemClickListener(position, new CustomOnItemClickListener.OnItemClickCallback() {
             @Override
             public void onItemClicked(View view, int position) {
-                Toast.makeText(context,"Favorite "+getListPresident().get(position).getName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Favorite "+ getListFilm().get(position).getName(),Toast.LENGTH_SHORT).show();
             }
         }));
 
         holder.btnDetail.setOnClickListener(new CustomOnItemClickListener(position, new CustomOnItemClickListener.OnItemClickCallback() {
             @Override
             public void onItemClicked(View view, int position) {
-//                Toast.makeText(context, "Share "+getListPresident().get(position).getName(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Share "+getListFilm().get(position).getName(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context,detailFilm.class);
                 intent.putExtra(Utils.FILM_NAME,p.getName());
                 intent.putExtra(Utils.FILM_DESCRIPTION,p.getDescription());
@@ -90,7 +90,7 @@ public class CardViewPresidentAdapter extends RecyclerView.Adapter<CardViewPresi
 
     @Override
     public int getItemCount() {
-        return getListPresident().size();
+        return getListFilm().size();
     }
 
 

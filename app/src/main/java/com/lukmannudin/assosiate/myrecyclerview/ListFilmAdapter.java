@@ -12,20 +12,20 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdapter.CategoryViewHolder> {
+public class ListFilmAdapter extends RecyclerView.Adapter<ListFilmAdapter.CategoryViewHolder> {
     private Context context;
-    private ArrayList<President> listPresident;
+    private ArrayList<Film> listFilm;
 
-    public ListPresidentAdapter(Context context){
+    public ListFilmAdapter(Context context){
         this.context = context;
     }
 
-    public ArrayList<President> getListPresident(){
-        return listPresident;
+    public ArrayList<Film> getListFilm(){
+        return listFilm;
     }
 
-    public void setListPresident(ArrayList<President> listPresident){
-        this.listPresident = listPresident;
+    public void setListFilm(ArrayList<Film> listFilm){
+        this.listFilm = listFilm;
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder  {
@@ -49,11 +49,11 @@ public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdap
 
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
-        holder.tvName.setText(getListPresident().get(position).getName());
-        holder.tvRemarks.setText(getListPresident().get(position).getYear());
+        holder.tvName.setText(getListFilm().get(position).getName());
+        holder.tvRemarks.setText(getListFilm().get(position).getYear());
 
         Glide.with(context)
-            .load(getListPresident().get(position).getPhoto())
+            .load(getListFilm().get(position).getPhoto())
                 .override(55,55)
                 .crossFade()
                 .into(holder.imgPhoto);
@@ -61,7 +61,7 @@ public class ListPresidentAdapter extends RecyclerView.Adapter<ListPresidentAdap
 
     @Override
     public int getItemCount() {
-        return getListPresident().size();
+        return getListFilm().size();
     }
 
 

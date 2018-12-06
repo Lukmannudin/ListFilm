@@ -2,7 +2,7 @@ package com.lukmannudin.assosiate.myrecyclerview;
 
 import java.util.ArrayList;
 
-public class PresidentData {
+public class FilmData {
     public static String[][] data = new String[][]{
             {
                     "The Shape of water",
@@ -49,16 +49,16 @@ public class PresidentData {
             }
     };
 
-    public static ArrayList<President> getListData() {
-        President president = null;
-        ArrayList<President> list = new ArrayList<>();
+    public static ArrayList<Film> getListData() {
+        Film film = null;
+        ArrayList<Film> list = new ArrayList<>();
         for (int i = 0; i < data.length; i++) {
-            president = new President();
-            president.setName(data[i][0]);
-            president.setYear(data[i][1]);
-            president.setPhoto(data[i][2]);
-            president.setDescription(data[i][3]);
-            list.add(president);
+            film = new Film();
+            film.setName(data[i][0]);
+            film.setYear(data[i][1]);
+            film.setPhoto(data[i][2]);
+            film.setDescription(data[i][3]);
+            list.add(film);
         }
         return list;
     }

@@ -17,6 +17,7 @@ public class detailFilm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_film);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Detail Film");
 
 
         titleFilm = findViewById(R.id.tvFilmTitle);
